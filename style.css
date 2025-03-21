@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Big Shoulders", sans-serif;
+}
+
+.dark-mode {
+  background-color: black;
+  color: #fff;
+}
+
+.light-mode {
+  background-color: #fff;
+}
+
+.icon-hidden {
+  display: none;
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.todo_title {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+  align-items: center;
+  gap: 20px;
+}
+
+.todo_title svg {
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.todo_title svg:hover {
+  animation: rotate 0.8s linear;
+}
+
+.todo-name {
+  font-size: 32px;
+  font-style: italic;
+  letter-spacing: 1.2px;
+}
+
+.todo-activities {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+
+.todo-done {
+  color: grey;
+}
+
+.todo p {
+  user-select: none;
+}
+
+.todo-pending {
+  color: #ffbf00;
+}
+
+.todo-active {
+  color: #1ad600;
+}
+
+.todo-input {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-input input {
+  padding: 10px 40px;
+  resize: horizontal;
+  min-width: 300px;
+  border: 1px solid blanchedalmond;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.todo-input input:active {
+  width: auto;
+}
+
+.todo-input input:focus {
+  border: none;
+  outline: none;
+}
+
+.todos {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  min-width: 600px;
+  align-items: center;
+  font-style: italic;
+  -webkit-box-shadow: 0px -3px 11px 2px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: 0px -3px 11px 2px rgba(0, 0, 0, 0.27);
+  box-shadow: 0px -3px 11px 2px rgba(0, 0, 0, 0.27);
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* .todo:hover {
+  transition: scale ease-in-out 0.6s;
+  scale: 1.03;
+}
+
+.todo:not(:hover) {
+  transition: scale 0.8s ease-out; /* Slower and smoother transition when hovering out */
+/* } */
+.todo-btns {
+  margin-left: 20px;
+  display: flex;
+  gap: 25px;
+}
+
+/* activities */
+
+.task-done {
+  color: grey;
+  text-decoration: line-through;
+}
+
+.task-pending {
+  color: #ffbf00;
+  text-decoration: none;
+}
+
+.todo-sort {
+  letter-spacing: 1.3px;
+}
+
+.todo-activities p {
+  padding: 5px 10px;
+  box-shadow: 0;
+  transition: box-shadow 1s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.todo-activities p:hover {
+  -webkit-box-shadow: -1px 7px 17px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 7px 17px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 7px 17px 2px rgba(0, 0, 0, 0.75);
+}
+
+.todo-btns span {
+  transition: scale ease-in-out 0.3s;
+  padding: 8px;
+}
+
+.todo-btns span:hover {
+  scale: 1.5;
+}
+
+/* pagination */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 1.3px;
+  font-size: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pagination > div {
+  cursor: pointer;
+  transition: background-color 0.6s ease-in-out;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.pagination > div:hover {
+  background-color: gainsboro;
+}
+
+.edit-input {
+  border: none;
+  outline: none;
+}
+
+.dragging {
+  opacity: 0.5;
+  border: 2px dashed #000;
+  cursor: grabbing;
+}
+
+.todo.dragging {
+  opacity: 0.5;
+  transform: scale(0.95); /* Slightly shrink while dragging */
+}
+
+.todo.drag-over {
+  background-color: #f0f4c3; /* Light green highlight */
+  border: 2px dashed #7cb342; /* Dashed border for drop target */
+  transform: scale(1.02); /* Slightly grow to indicate drop zone */
+}
